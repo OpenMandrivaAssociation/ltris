@@ -78,7 +78,7 @@ Icon=ltris
 Terminal=false
 Type=Application
 Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
-EOF 
+EOF
 
 %find_lang %name
 
