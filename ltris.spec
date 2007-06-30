@@ -1,6 +1,6 @@
 %define	name	ltris
 %define	version	1.0.11
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 
 Summary:	Nice tetris clone
 Name:	        %{name}
@@ -63,8 +63,22 @@ cat >$RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
   title="LTris"\
   longtitle="Nice tetris clone"\
   command="%{_gamesbindir}/%{name}"\
-  icon="ltris.png"
+  icon="ltris.png"\
+  xdg="true"
 EOF
+
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat >$RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=LTris
+Comment=%{Summary}
+Exec=/usr/games/ltris
+Icon=ltris
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+EOF 
 
 %find_lang %name
 
@@ -83,6 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755, root, games) %{_gamesbindir}/*
 %attr(664, root, games) %{_localstatedir}/%{name}.hscr
 %{_datadir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_menudir}/*
 %{_iconsdir}/*.png
 %{_miconsdir}/*
