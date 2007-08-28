@@ -58,7 +58,6 @@ bzcat %{SOURCE7} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cat >$RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=LTris
 Comment=Nice tetris clone
 Exec=/usr/games/ltris
