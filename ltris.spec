@@ -15,6 +15,7 @@ Source6:	%{name}32.png.bz2
 Source7:	%{name}48.png.bz2
 License:	GPL
 Group:		Games/Arcade
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	common-licenses
 BuildRequires:	libSDL-devel
 
