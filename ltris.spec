@@ -1,6 +1,6 @@
 %define	name	ltris
 %define	version	1.0.11
-%define	release	%mkrel 4
+%define	release	%mkrel 5
 
 Summary:	Nice tetris clone
 Name:	        %{name}
@@ -17,7 +17,7 @@ License:	GPL
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	common-licenses
-BuildRequires:	libSDL-devel
+BuildRequires:	libSDL_mixer-devel
 
 
 %description
