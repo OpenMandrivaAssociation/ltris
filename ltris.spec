@@ -39,7 +39,7 @@ o Two game modes
 %setup -q
 
 %build
-%configure	--with-highscore-path=%{_localstatedir}/games \
+%configure	--with-highscore-path=%{_localstatedir}/lib/games \
 		--bindir=%{_gamesbindir}
 %make
 
@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README INSTALL AUTHORS ChangeLog
 %attr(2755, root, games) %{_gamesbindir}/*
-%attr(664, root, games) %{_localstatedir}/%{name}.hscr
+%attr(664, root, games) %{_localstatedir}/lib/%{name}.hscr
 %{_datadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/*.png
