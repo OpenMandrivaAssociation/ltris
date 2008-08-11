@@ -1,6 +1,6 @@
 %define	name	ltris
-%define	version	1.0.11
-%define	release	%mkrel 7
+%define	version	1.0.12
+%define	release	%mkrel 1
 
 Summary:	Nice tetris clone
 Name:	        %{name}
@@ -8,17 +8,15 @@ Version:	%{version}
 Release:	%{release}
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
-Source0:	ltris-%{version}.tar.bz2
+Source0:	http://dfn.dl.sourceforge.net/sourceforge/lgames/%name-%version.tar.gz
 # Source4:	%{name}.menu
 Source5:	%{name}16.png.bz2
 Source6:	%{name}32.png.bz2
 Source7:	%{name}48.png.bz2
-License:	GPL
+License:	GPLv2+
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-Requires:	common-licenses
 BuildRequires:	libSDL_mixer-devel
-
 
 %description
 o Tetris clone using SDL
@@ -39,7 +37,7 @@ o Two game modes
 %setup -q
 
 %build
-%configure	--with-highscore-path=%{_localstatedir}/lib/games \
+%configure2_5x	--with-highscore-path=%{_localstatedir}/lib/games \
 		--bindir=%{_gamesbindir}
 %make
 
@@ -64,7 +62,7 @@ Exec=/usr/games/ltris
 Icon=ltris
 Terminal=false
 Type=Application
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 %find_lang %name
@@ -86,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README INSTALL AUTHORS ChangeLog
 %attr(2755, root, games) %{_gamesbindir}/*
-%attr(664, root, games) %{_localstatedir}/lib/%{name}.hscr
+%attr(664, root, games) %{_localstatedir}/%{name}.hscr
 %{_datadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/*.png
