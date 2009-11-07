@@ -1,6 +1,6 @@
 %define	name	ltris
-%define	version	1.0.12
-%define	release	%mkrel 2
+%define	version	1.0.13
+%define	release	%mkrel 1
 
 Summary:	Nice tetris clone
 Name:	        %{name}
