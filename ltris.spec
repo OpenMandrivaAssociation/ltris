@@ -1,5 +1,5 @@
 %define	name	ltris
-%define	version	1.0.13
+%define	version	1.0.14
 %define	release	%mkrel 1
 
 Summary:	Nice tetris clone
@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
-Source0:	http://dfn.dl.sourceforge.net/sourceforge/lgames/%name-%version.tar.gz
+Source0:	http://prdownloads.sourceforge.net/lgames/%{name}-%{version}.tar.gz
 # Source4:	%{name}.menu
 Source5:	%{name}16.png.bz2
 Source6:	%{name}32.png.bz2
@@ -52,6 +52,9 @@ bzcat %{SOURCE6} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
 bzcat %{SOURCE7} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
 
 # install -D -m644 %SOURCE4 $RPM_BUILD_ROOT%{_menudir}/%{name}
+
+rm %{buildroot}%{_datadir}/applications/%{name}.desktop
+rm %{buildroot}%{_iconsdir}/%{name}48.gif
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cat >$RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
