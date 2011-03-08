@@ -1,6 +1,6 @@
 %define	name	ltris
-%define	version	1.0.14
-%define	release	%mkrel 2
+%define	version	1.0.16
+%define	release	%mkrel 1
 
 Summary:	Nice tetris clone
 Name:	        %{name}
@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
-Source0:	http://prdownloads.sourceforge.net/lgames/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/lgames/%{name}-%{version}.tar.xz
 # Source4:	%{name}.menu
 Source5:	%{name}16.png.bz2
 Source6:	%{name}32.png.bz2
