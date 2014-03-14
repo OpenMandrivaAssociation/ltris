@@ -1,10 +1,10 @@
 Summary:	Nice tetris clone
 Name:		ltris
-Version:	1.0.18
-Release:	%mkrel 1
+Version:	1.0.19
+Release:	1
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
-Source0:	http://prdownloads.sourceforge.net/lgames/%{name}-%{version}.tar.gz
+Source0:	http://sourceforge.net/projects/lgames/files/%{name}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
