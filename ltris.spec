@@ -1,7 +1,9 @@
+%define _disable_ld_no_undefined 1
+%define _disable_lto 1
 Summary:	Nice tetris clone
 Name:		ltris
 Version:	1.0.19
-Release:	2
+Release:	3
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
 Source0:	http://sourceforge.net/projects/lgames/files/%{name}/%{name}-%{version}.tar.gz
@@ -33,11 +35,11 @@ o Two game modes
 %build
 %configure2_5x	--localstatedir=%{_localstatedir}/games \
 		--bindir=%{_gamesbindir}
-%make
+%make_build
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+%make_install
 
 mkdir -p %{buildroot}{%{_liconsdir},%{_miconsdir}}
 convert icons/%{name}48.xpm %{buildroot}%{_liconsdir}/%{name}.png
