@@ -1,6 +1,6 @@
 Summary:	Nice tetris clone
 Name:		ltris
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
@@ -31,13 +31,12 @@ o Two game modes
 %setup -q
 
 %build
-%configure2_5x	--localstatedir=%{_localstatedir}/games \
+%configure	--localstatedir=%{_localstatedir}/games \
 		--bindir=%{_gamesbindir}
-%make
+%make_build
 
 %install
-rm -rf %{buildroot}
-%makeinstall_std
+%make_install
 
 mkdir -p %{buildroot}{%{_liconsdir},%{_miconsdir}}
 convert icons/%{name}48.xpm %{buildroot}%{_liconsdir}/%{name}.png
