@@ -44,7 +44,7 @@ convert icons/%{name}32.xpm %{buildroot}%{_iconsdir}/%{name}.png
 convert icons/%{name}16.xpm %{buildroot}%{_miconsdir}/%{name}.png
 
 rm %{buildroot}%{_datadir}/applications/%{name}.desktop
-rm %{buildroot}%{_iconsdir}/%{name}48.gif
+#rm %{buildroot}%{_iconsdir}/%{name}48.gif
 
 mkdir -p %{buildroot}%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
