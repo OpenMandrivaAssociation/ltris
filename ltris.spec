@@ -1,13 +1,12 @@
 Summary:	Nice tetris clone
 Name:		ltris
-Version:	1.2.6
+Version:	1.3
 Release:	1
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
 Source0:	http://sourceforge.net/projects/lgames/files/%{name}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Games/Arcade
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
@@ -28,7 +27,7 @@ o Two player mode
 o Two game modes
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure	--localstatedir=%{_localstatedir}/games \
@@ -38,13 +37,7 @@ o Two game modes
 %install
 %make_install
 
-mkdir -p %{buildroot}{%{_liconsdir},%{_miconsdir}}
-convert icons/%{name}48.xpm %{buildroot}%{_liconsdir}/%{name}.png
-convert icons/%{name}32.xpm %{buildroot}%{_iconsdir}/%{name}.png
-convert icons/%{name}16.xpm %{buildroot}%{_miconsdir}/%{name}.png
-
 rm %{buildroot}%{_datadir}/applications/%{name}.desktop
-#rm %{buildroot}%{_iconsdir}/%{name}48.gif
 
 mkdir -p %{buildroot}%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
@@ -60,20 +53,13 @@ EOF
 
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc README INSTALL AUTHORS ChangeLog
 %attr(2755, root, games) %{_gamesbindir}/*
 %config(noreplace) %attr(664, games, games) %{_localstatedir}/games/%{name}.hscr
 %{_datadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
-%{_iconsdir}/*.png
-%{_miconsdir}/*
-%{_liconsdir}/*
-
+%{_iconsdir}/*/*/*
 
 
 %changelog
