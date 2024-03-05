@@ -1,7 +1,7 @@
 Summary:	Nice tetris clone
 Name:		ltris
 Version:	1.3
-Release:	1
+Release:	2
 Epoch:		1
 Url:		http://lgames.sourceforge.net/index.php?project=LTris
 Source0:	http://sourceforge.net/projects/lgames/files/%{name}/%{name}-%{version}.tar.gz
@@ -37,20 +37,9 @@ o Two game modes
 %install
 %make_install
 
-rm %{buildroot}%{_datadir}/applications/%{name}.desktop
-
-mkdir -p %{buildroot}%{_datadir}/applications/
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
-[Desktop Entry]
-Name=LTris
-Comment=Nice Tetris clone
-Exec=ltris
-Icon=ltris
-Terminal=false
-Type=Application
-Categories=Game;ArcadeGame;
-EOF
-
+# non standard location fix
+mkdir %{buildroot}/%{_iconsdir}/hicolor/48x48
+mv %{buildroot}/%{_iconsdir}/hicolor/apps  %{buildroot}/%{_iconsdir}/hicolor/48x48
 %find_lang %{name}
 
 %files -f %{name}.lang
@@ -58,8 +47,8 @@ EOF
 %attr(2755, root, games) %{_gamesbindir}/*
 %config(noreplace) %attr(664, games, games) %{_localstatedir}/games/%{name}.hscr
 %{_datadir}/%{name}
-%{_datadir}/applications/mandriva-%{name}.desktop
-%{_iconsdir}/*/*/*
+%{_datadir}/applications/%{name}.desktop
+%{_iconsdir}/*/*/*/*
 
 
 %changelog
