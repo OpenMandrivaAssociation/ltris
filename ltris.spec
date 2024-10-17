@@ -3,7 +3,7 @@ Name:		ltris
 Version:	1.3
 Release:	2
 Epoch:		1
-Url:		http://lgames.sourceforge.net/index.php?project=LTris
+Url:		https://lgames.sourceforge.net/index.php?project=LTris
 Source0:	http://sourceforge.net/projects/lgames/files/%{name}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Games/Arcade
