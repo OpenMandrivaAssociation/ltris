@@ -7,6 +7,11 @@ Url:		https://lgames.sourceforge.net/index.php?project=LTris
 Source0:	http://sourceforge.net/projects/lgames/files/%{name}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Games/Arcade
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
